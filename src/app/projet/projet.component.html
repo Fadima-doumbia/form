@@ -1,0 +1,65 @@
+<div class="login-form text-center">
+  <main class="form-signin">
+    <form (ngSubmit)="onSubmit()" [formGroup] = "projectForm">
+      <h1>Créer Votre projet !</h1>
+
+      <div class="form-floating">
+        <input type="number"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="id">
+        <label for="floatingInput">id</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="name">
+        <label for="floatingInput">nom</label>
+      </div>
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="description">
+        <label for="floatingInput">description</label>
+      </div>
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="entrepreneur">
+        <label for="floatingInput">auteur</label>
+      </div>
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="besoin">
+        <label for="floatingInput">besoin</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="date"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="dateD">
+        <label for="floatingInput">Date</label>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary"
+              type="submit"
+              [disabled]="projectForm.invalid">Création</button>
+    </form>
+    <hr>
+  </main>
+</div>
+<!-- ******************************************************************************************* -->
+<app-list-projet [listProject]="dataProject"></app-list-projet>

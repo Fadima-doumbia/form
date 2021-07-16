@@ -1,0 +1,95 @@
+<div class="login-form text-center">
+  <main class="form-signin">
+    <form (ngSubmit)="onSubmit()" [formGroup] = "userForm">
+      <h1>Créer Votre Compte !</h1>
+
+      <div class="form-floating">
+        <input type="number"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="id">
+        <label for="floatingInput">id</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="firstName">
+        <label for="floatingInput">firstName</label>
+      </div>
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="lastName">
+        <label for="floatingInput">lastName</label>
+      </div>
+      <div class="form-floating">
+        <input type="tel"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="telephone">
+        <label for="floatingInput">telephone</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="email"
+        [ngClass]="{'is-invalid' : (userForm.get('email')?.dirty || userForm.get('email')?.touched) && userForm.get('email')?.invalid}"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="email">
+        <label for="floatingInput">email</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="presentation">
+        <label for="floatingInput">presentation</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="pays">
+        <label for="floatingInput">Pays</label>
+      </div>
+
+      <div class="form-floating">
+        <div class="contain-imgpost">
+
+            <img src="" alt="choose picture" class="img1" width="250" height="250">
+        </div>
+
+        <input type="file" id="name-input" accept="image/*" placeholder="image" formControlName="image" #Image
+            (change)="addphoto($event)">
+    </div>
+
+    <div class="form-floating">
+      <input type="password"
+      [ngClass]="{'is-invalid' : (userForm.get('password')?.dirty || userForm.get('password')?.touched) && userForm.get('password')?.invalid}"
+              class="form-control"
+              id="floatingInput"
+              placeholder=""
+              formControlName="password">
+      <label for="floatingInput">password</label>
+    </div>
+
+      <button class="w-100 btn btn-lg btn-primary"
+              type="submit"
+              [disabled]="userForm.invalid">Création</button>
+    </form>
+  </main>
+</div>
+
+<app-list-user [listUsers]="dataUser"></app-list-user>

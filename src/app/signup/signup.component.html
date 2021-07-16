@@ -1,0 +1,53 @@
+<!-- <div class="login-form text-center">
+  <main class="form-signin">
+    <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+      <h1>Créer ton compte !</h1>
+
+      <div class="form-floating">
+        <input type="email"
+                [ngClass]="{'is-invalid' : (signupForm.get('email')?.dirty || signupForm.get('email')?.touched) && signupForm.get('email')?.invalid}"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="email">
+        <label faor="floatingInput">Adresse email</label>
+      </div>
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="firstName">
+        <label for="floatingInput">Prénom</label>
+      </div>
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="lastName">
+        <label for="floatingInput">Nom</label>
+      </div>
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="pseudo">
+        <label for="floatingInput">Pseudo</label>
+      </div>
+      <div class="form-floating">
+        <input type="password"
+                class="form-control"
+                [ngClass]="{'is-invalid' : (signupForm.get('password')?.dirty || signupForm.get('password')?.touched) && signupForm.get('password')?.invalid}"
+                id="floatingInput"
+                placeholder=""
+                formControlName="password">
+        <label for="floatingInput">Mot de passe</label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary"
+              type="submit"
+              [disabled]="signupForm.invalid">Création</button>
+    </form>
+  </main>
+</div> -->
