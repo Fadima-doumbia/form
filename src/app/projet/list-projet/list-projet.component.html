@@ -4,6 +4,12 @@
     *ngFor="let project of listProject"
     [name]="project.name"
     [description]="project.description"
-    [id]="project.id"></app-card-projet>
+    [id]="project.id">
+
+    <button class="w-100 btn btn-lg btn-primary"
+      type="submit"
+      [disabled]="">supprimer
+    </button>
+  </app-card-projet>
   </div>
 </div>

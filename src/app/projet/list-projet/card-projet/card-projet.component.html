@@ -3,5 +3,11 @@
     <h5 class="card-title">{{ name }}</h5>
     <p class="card-text">{{ description }}</p>
     <a [routerLink]="[id]" class="card-link">Details</a>
+    <div>
+      <button class="w-100 btn btn-lg btn-primary"
+              type="submit"
+              [disabled]="">Création
+      </button>
+    </div>
   </div>
 </div>

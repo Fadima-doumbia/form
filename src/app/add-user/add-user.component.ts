@@ -3,15 +3,14 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { User } from '../model/User.model';
-import { PostService } from '../services/post.service';
 import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  selector: 'app-add-user',
+  templateUrl: './add-user.component.html',
+  styleUrls: ['./add-user.component.scss']
 })
-export class UserComponent implements OnInit {
+export class AddUserComponent implements OnInit {
   dataUser? : User[];
   userSubcription? : Subscription;
   selectFile:any =null;
@@ -74,7 +73,10 @@ export class UserComponent implements OnInit {
   }
 
   addphoto(event:any){
+    const file = event.target.files[0];
     this.selectFile = event.target.files[0];
+    this.userForm.patchValue({image:file});
+    this.selectFile = file;
    // console.log(this.selectFile);
   }
 
@@ -85,6 +87,7 @@ export class UserComponent implements OnInit {
       (user : User) => {
         console.log(user);
         this.dataUser?.push(user);
+        this.router.navigate(['/user']);//redirect
       }
     )
     formValues["photo"] = this.selectFile;

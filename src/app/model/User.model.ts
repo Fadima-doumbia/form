@@ -6,6 +6,6 @@ export class User{
  email?: string;
  presentation?: string;
  pays?: string;
- image?: File;
+ image?: String;
  password?: string;
 }

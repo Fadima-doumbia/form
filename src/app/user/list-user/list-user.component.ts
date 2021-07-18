@@ -13,4 +13,17 @@ export class ListUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  // deleteUser(id:number){
+  //   this.userService.deleteUser(id).subscribe(
+  //     (resp : any) => {
+  //       const index: any = this.dataUser?.findIndex((user : any) => user.id === id);
+  //       this.dataUser?.splice(index, 1);
+  //     },
+  //     err => {
+  //       console.log(err);
+  //     },
+  //     () => console.log('fini')
+  //   );
+  // }
 }

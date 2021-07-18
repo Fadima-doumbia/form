@@ -1,4 +1,4 @@
-<!-- <div class="login-form text-center">
+<div class="login-form text-center">
   <main class="form-signin">
     <form (ngSubmit)="onSubmit()" [formGroup] = "userForm">
       <h1>Créer Votre Compte !</h1>
@@ -67,16 +67,14 @@
 
       <div class="form-floating">
         <div class="contain-imgpost">
-
             <img src="" alt="choose picture" class="img1" width="250" height="250">
         </div>
-
         <input type="file" id="name-input" accept="image/*" placeholder="image" formControlName="image" #Image
             (change)="addphoto($event)">
     </div>
 
     <div class="form-floating">
-      <input type="password"
+      <input type="test"
       [ngClass]="{'is-invalid' : (userForm.get('password')?.dirty || userForm.get('password')?.touched) && userForm.get('password')?.invalid}"
               class="form-control"
               id="floatingInput"
@@ -90,6 +88,4 @@
               [disabled]="userForm.invalid">Création</button>
     </form>
   </main>
-</div> -->
-
-<app-list-user [listUsers]="dataUser"></app-list-user>
+</div>

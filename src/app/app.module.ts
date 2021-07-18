@@ -31,6 +31,7 @@ import { CardProjetComponent } from './projet/list-projet/card-projet/card-proje
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ListUserComponent } from './user/list-user/list-user.component';
 import { CardUserComponent } from './user/list-user/card-user/card-user.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { CardUserComponent } from './user/list-user/card-user/card-user.componen
     CardProjetComponent,
     NotFoundComponent,
     ListUserComponent,
-    CardUserComponent  ],
+    CardUserComponent,
+    AddUserComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

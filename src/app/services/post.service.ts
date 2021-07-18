@@ -38,8 +38,6 @@ export class PostService {
   projectSubject = new Subject<any[]>();
   projetObject$ = new Subject<Projet[]>();
 
-
-
   constructor(private httpClient: HttpClient) { }
 
   addProject(){
@@ -54,6 +52,10 @@ export class PostService {
     this.projects.push(newProject);
     console.log(this.projects);
     this.emitDataProject();
+  }
+
+  deletePost(id : number){
+    return this.httpClient.delete(`${this.baseUrl}/${id}`)
   }
 
   emitDataProject(){

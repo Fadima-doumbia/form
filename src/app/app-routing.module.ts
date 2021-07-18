@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddProjectComponent } from './add-project/add-project.component';
+import { AddUserComponent } from './add-user/add-user.component';
 // import { FeaturesComponent } from './features/features.component';
 import { AuthGuardGuard } from './guards/auth-guard.guard';
 import { HomeComponent } from './home/home.component';
@@ -19,8 +21,8 @@ const routes: Routes = [
     { path: 'home',  component: HomeComponent},
     { path: 'user',  component: UserComponent},
     { path: 'projet',  component: ProjetComponent},
-    // { path: 'features', component: FeaturesComponent},
-    // { path: 'features/:id', component: OneFeatureComponent},
+    { path: 'add-project',  component: AddProjectComponent},
+    { path: 'add-user',  component: AddUserComponent},
     { path: 'not-found', component: NotFoundComponent},
     { path:'**', redirectTo:'/not-found'}
   ]}

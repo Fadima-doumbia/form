@@ -61,10 +61,13 @@ export class UserService {
       image : "",
       password : "motdepasse"
     }
-
     this.users.push(newUser);
     console.log(this.users);
     this.emitDataUser();
+  }
+
+  deleteUser(id : number){
+    return this.httpClient.delete(`${this.baseUrl}/${id}`)
   }
 
   emitDataUser(){
@@ -84,18 +87,29 @@ export class UserService {
     )
   }
 
-  send(newUser: UserService){
-    const body=JSON.stringify(newUser);
-    const formData=new FormData();
-    for(const [key, value] of Object.entries(newUser)){
-      formData.append(key,value)
-    }
+  send(newModel : User){
+    // const body=JSON.stringify(newUser);
+    // const formData=new FormData();
+    // for(const [key, value] of Object.entries(newUser)){
+    //   formData.append(key,value)
+    // }
     // formData.append("photo",newProjet.photo?.name)
     // console.log(newProjet)
-    console.log(body);
-    return this.httpClient.post(this.baseUrl, newUser)
+    // console.log(body);
+    const formData = new FormData();
+    const userImage:any = newModel.image;
+    formData.append("image", userImage);//pr ajouter l'img dans le formdata
+    delete newModel.image;//pour supprimer l'image
+    formData.append("users", new Blob([JSON.stringify(newModel)], {
+      type:"application/json"
+    }))
+    return this.httpClient.post(this.baseUrl, formData)
   }
 }
+
+
+
+
 // {
 //   "id" : "1",
 //   "firstName" : "nom",

@@ -52,9 +52,13 @@ export class ProjetComponent implements OnInit {
   onSubmit() {//fonction bouton de validation et d'envoi des infos
     const formValues = this.projectForm?.value;
     console.log(formValues);//recuperer l'objet
-    this.postService.send(formValues).subscribe()
+    this.postService.send(formValues).subscribe(
+      (project: Projet) => {
+        console.log(project);
+        this.dataProject?.push(project);
+      }
+    )
     formValues["photo"] = this.selectFile;
-
 
     // this.authService.signup(formValues['nom'],formValues['description'],formValues['auteur'],formValues['besoin'])
     // .subscribe(
